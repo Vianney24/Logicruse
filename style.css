@@ -1,0 +1,368 @@
+/*   style css site_ppe   */
+/*________________________*/
+
+body {
+    font-family: 'Lucida Sans Unicode', sans-serif, serif;
+}
+
+/*footer*/
+    .pied_de_page {
+        background-color: white;
+        margin-top: 70%;
+        width: 100%;
+        text-align: center; 
+        border-top: 1px solid #e2e2e2;
+        padding: 1em 1em 1em 1em; 
+    }
+/*fin footer*/
+
+/*header*/
+    .btn-nav { 
+        background-color: #fff;
+        -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+        -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+        box-sizing: border-box;         /* Opera/IE 8+ */
+    }
+    .btn-nav:hover {
+        color: #e92d00;
+        cursor: pointer;
+        -webkit-transition: color 0.3s;
+        transition: color 0.3s;
+    }
+    .btn-group-justified {
+        margin-left: 0;
+        margin-right: 0;
+        background-color: white;
+        position:;
+    }
+    .container {
+    	width: 102%;
+        float: left;
+        position: fixed;
+        z-index: 10;
+        background-color: white;
+        margin-left: -20px;
+    }
+    .logo {
+        float: left;
+        background-color: white;
+    }
+    .logo img {
+        float: left;
+        width: 45%;
+    }
+    .container li {
+        float: left;
+    }
+/*fin header*/
+
+/*style index.php*/
+    .a_propos {
+        background-color: white;
+        width: 100%;
+        margin: auto;
+        margin-top: -7%;
+        padding: 1em 1em 1em 1em;
+    }
+    .a_propos p {
+        width: 70%;
+    }
+    .titre {
+        text-align:center;
+    }
+    .image_gde_croisiere {
+        width: 60%;
+        margin-top: -10%;
+        margin-left: 40%;
+    }
+    .boutton_service {
+        float: right;
+        margin-top: 1em;
+        margin-right: 15%;
+    }
+    .texte {
+        float: left;
+        margin-top: 3%;
+        width: 55%;
+        border-bottom: 1px solid #e2e2e2;
+    }
+/*fin style index.php*/
+
+/*style compte.php*/
+    .backgroundcompte{
+    background-image: url('images/login.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    }
+/*fin style compte.php*/
+    .Login {
+        border: 2px solid black;
+        width: 20%;
+        border-radius: 10px;
+        padding: 50px;
+        background-color: rgba(255,255,255,0.7);
+        margin-left: 600px;
+        text-align: center;
+        margin-top: 5%;
+    }
+    .positionCiv {
+        padding: 0 0 1em 0;
+    }
+    .Formulaire {
+        border: 2px solid rgba(94, 92, 97,0.8);
+        width: 68%;
+        border-radius: 10px;
+        margin-top:50px;
+        background-color: rgba(255, 255, 255, 0.7);
+        margin-left: auto;
+        margin-right: auto;
+		height: 450px;
+        margin-top: 5%;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+	.FormulaireRes {
+        border: 2px solid rgba(94, 92, 97,0.8);
+        width: 68%;
+        border-radius: 10px;
+        margin-top:50px;
+        background-color: rgba(255, 255, 255, 0.7);
+        margin-left: auto;
+        margin-right: auto;
+        height: 600px;
+        margin-top: 5%;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    .dateform{
+        margin-left:10px;
+        color: black;
+    }
+    .enteteformulaire{
+        text-align: center;
+    }
+    .positionContact{
+        margin-top: -20px;
+    }
+    .positionLieu{
+        margin-top: -20px;
+    }
+    .btn_position{
+        text-align: center;
+    }
+    .carousel {
+   
+        overflow: hidden;
+    }
+    .carousel .item {
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -ms-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+    }
+    .carousel .active.left, .carousel .active.right {
+    left:0;
+    opacity:0;
+    z-index:2;
+    }
+    .carousel .next, .carousel .prev {
+    left:0;
+    opacity:1;
+    z-index:1;
+    }    
+    .validation {
+        float: right;
+        margin-right: 2em;
+        margin-top: 10%;
+    }
+
+/*style evenement.php*/
+    .section_evenement {
+        text-decoration: none;
+        text-decoration-color: black;
+    }
+    .section_evenement:hover {
+        opacity: 0.8;
+        cursor: pointer;
+    }
+    .banner_evenement img {
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        width: 100%;
+    }
+    .text_banner_evenement {
+        position:absolute;
+        top:280px;
+        text-align:center;
+        width:100%;
+        height:120px;
+        color:#ffffff;
+    }
+    .nav-sidebar { 
+        width: 100%;
+        padding: 5em 0 3em 1em;
+        border-right: 1px solid #ddd;
+    }
+    .nav-sidebar a {
+        color: #333;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+        -webkit-transition: all 0.08s linear;
+        -moz-transition: all 0.08s linear;
+        -o-transition: all 0.08s linear;
+        transition: all 0.08s linear;
+    }
+    .nav-sidebar .active a { 
+        cursor: default;
+        background-color: #0b56a8; 
+        color: #fff; 
+    }
+    .nav-sidebar .active a:hover {
+        background-color: #E50000;   
+    }
+    .nav-sidebar .text-overflow a,
+    .nav-sidebar .text-overflow .media-body {
+        white-space: nowrap;
+        overflow: hidden;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis; 
+    }
+    .evenement {
+        box-shadow: 0px 0px 7px #e2e2e2;
+        background-color: #fcfcfc;
+        width: 40%;
+        margin-top: 2em;
+        margin-left: 2em;
+        float: left;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+    .evenement img {
+        float: left;
+        width: 50%;
+        margin-left: -20px;
+    }
+    .text_evenement {
+        float: left;
+        margin-left: 1em;
+        padding: 0 0 1em 0;
+    }
+    .text_evenement h3 {
+        border-bottom: 1px solid #e2e2e2;
+    }
+/*fin style evenement.php*/
+
+/*style voyage.php*/
+    .voy
+    {
+        width: 100%;
+        height: 50%;
+        overflow-y: hidden;
+    }
+
+    .img_voy 
+    {
+        width: 100%;
+    }
+
+    .textevoyage
+    {
+        position: absolute;
+        margin-top: 150px;
+        margin-left: 43%;
+        color: white;
+        font-size: 28px;
+    }
+    .positionVoyages{
+        margin-top: -11%;
+        text-align: center;
+        color: white;
+        font-size: 50px;
+    }
+    .BarreRecherche{
+        display: inline-block;
+        width: 100%;    
+        margin-top: ;
+    }
+    .bannerVoyages{
+        background-size: ;
+        background-repeat: no-repeat;
+        background-attachment: relative;
+        width: 100%;
+        height: 55%;
+    }
+/*fin style voyage.php*/
+
+    .lib-panel {
+        margin-bottom: 20Px;
+    }
+    .lib-panel img {
+        width: 100%;
+        background-color: transparent;
+    }
+    
+    .lib-panel .row,
+    .lib-panel .col-md-6 {
+        padding: 0;
+        background-color: #FFFFFF;
+    }
+    
+    
+    .lib-panel .lib-row {
+        padding: 0 20px 0 20px;
+    }
+    
+    .lib-panel .lib-row.lib-header {
+        background-color: #FFFFFF;
+        font-size: 20px;
+        padding: 10px 20px 0 20px;
+    }
+    
+    .lib-panel .lib-row.lib-header .lib-header-seperator {
+        height: 2px;
+        width: 26px;
+        background-color: #d9d9d9;
+        margin: 7px 0 7px 0;
+    }
+    
+    .lib-panel .lib-row.lib-desc {
+        position: relative;
+        height: 100%;
+        display: block;
+        font-size: 13px;
+    }
+    .lib-panel .lib-row.lib-desc a{
+        position: absolute;
+        width: 100%;
+        bottom: 10px;
+        left: 20px;
+    }
+    
+    .row-margin-bottom {
+        margin-bottom: 20px;
+    }
+    
+    .box-shadow {
+        -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,.10);
+        box-shadow: 0 0 10px 0 rgba(0,0,0,.10);
+    }
+    
+    .no-padding {
+        padding: 0;
+    }
+    .escale
+    {
+        font-family: 'Lucida Sans Unicode';
+        text-align: center;
+        color:black;
+    }
+    .escalevoyage
+    {
+        font-size: 20px;
+    }
+    .s
+    {
+        text-align: center;
+    }
