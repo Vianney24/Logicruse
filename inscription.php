@@ -23,7 +23,7 @@
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="post-heading">
-                    <h1>Inscrivez votre enfant à un de nos centre aéré</h1>
+                    <h1><center>Inscrivez-vous</center></h1>
                 </div>
             </div>
         </div>
@@ -36,40 +36,48 @@
         <div class="col-lg-8 col-md-10 mx-auto">
             <form action="traitement_inscription.php" method="post">
                 <div class="row">
-                    <h2><p class="titre_inscription"> Informations responsable légal </p></h2>
+                    <p class="h3"> Informations : </p>
 
                     <div class="col-lg-18 col-md-12 ">
-                        <input type="text" class="form-control" name="nomResp" placeholder="Nom *" required="true">
-                        <br>
-                        <input type="text" class="form-control" name="prenomResp" placeholder="Prenom">
-                        <br>
-                        <input type="text" class="form-control" name="adresseL1Resp" placeholder="Adresse *"
+                        <div class="margin-items-inscription">
+                        <input type="text" class="form-control" name="nomPers" placeholder="Nom *" required="true">
+                        </div>
+
+                        <div class="margin-items-inscription">
+                        <input type="text" class="form-control" name="prenomPers" placeholder="Prenom">
+                        </div>
+
+                        <div class="margin-items-inscription">
+                        <label><font size="3">Date de naissance (*) :</font></label>
+                        <input type="date" class="form-control" name="dateNaissPers" required="true">
+                        </div>
+
+                        <div class="margin-items-inscription">
+                        <input type="text" class="form-control" name="adresseL1Pers" placeholder="Adresse *"
                                required="true">
-                        <br>
-                        <input type="text" class="form-control" name="adresseL2Resp" placeholder="Adresse ligne 2">
-                        <br>
+                        </div>
+
+                        <div class="margin-items-inscription">
+                        <input type="text" class="form-control" name="adresseL2Pers" placeholder="Adresse ligne 2">
+                        </div>
+
+                        <div class="margin-items-inscription">
+                        <input type="text" class="form-control" name="mailResp" placeholder="Mail *" required="true">
+                        </div>
+
+                        <div class="margin-items-inscription">
                         <input type="text" class="form-control" name="telephoneResp"
                                placeholder="Telephone (05.--.--.--.--)">
-                        <br>
-                        <input type="text" class="form-control" name="mailResp" placeholder="Mail *" required="true">
-                        <br>
+                        </div>
+
+                        <div class="margin-items-inscription">
                         <input type="text" class="form-control" name="cpResp" placeholder="Code postal *"
                                required="true">
-                        <br>
-                        <input type="text" class="form-control" name="villeResp" placeholder="Ville *" required="true">
-                        <br>
-                    </div>
-                    <br>
-                    <h3><p class="titre_inscription"> Information enfant </p></h3>
+                        </div>
 
-                    <div class="col-lg-18 col-md-12 ">
-                        <input type="text" class="form-control" name="nomEnf" placeholder="Nom *" required="true"/>
-                        <br>
-                        <input type="text" class="form-control" name="prenomEnf" placeholder="Prenom"/>
-                        <br>
-                        <label><font size="4">Date de naissance * :</font></label>
-                        <input type="date" class="form-control" name="dateNaissEnf" required="true">
-                        <br>
+                        <div class="margin-items-inscription">
+                        <input type="text" class="form-control" name="villeResp" placeholder="Ville *" required="true">
+                        </div>
                     </div>
                     <br>
                 </div>

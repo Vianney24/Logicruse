@@ -19,3 +19,7 @@
 .header-inscription {
     background-image: url('../img/Inscription.jpg');
 }
+
+.margin-items-inscription{
+    margin-top: 20px;
+}

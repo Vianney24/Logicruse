@@ -13,7 +13,10 @@
                    <!-- Custom styles for this template -->
                    <link href="css/clean-blog.min.css" rel="stylesheet">
                    <!-- styles site -->
-                   <link href="css/style.css" rel="stylesheet">';
+                   <link href="css/style.css" rel="stylesheet">
+                   <link href="css/main.css" rel="stylesheet">
+                   <!-- styles util -->
+                   <link href="css/util.css.css" rel="stylesheet">';
         print($script);
     }
     

@@ -39,44 +39,34 @@
         <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
             <form class="login100-form validate-form">
 					<span class="login100-form-title p-b-33">
-						Connexion
+						Recuperer mon mot de passe
 					</span>
 
-                <div class="wrap-input100 validate-input" data-validate = "Une addresse mail valide est requise, exemple: ex@abc.xyz">
+                <div class="wrap-input100 validate-input m-t-20" data-validate = "Une addresse mail valide est requise, exemple: ex@abc.xyz">
                     <input class="input100" type="text" name="email" placeholder="Courriel" required>
-                    <span class="focus-input100-1"></span>
-                    <span class="focus-input100-2"></span>
-                </div>
-
-                <div class="wrap-input100 rs1 validate-input" data-validate="Mot de passe requis">
-                    <input class="input100" type="password" name="pass" placeholder="Mot de passe" required>
                     <span class="focus-input100-1"></span>
                     <span class="focus-input100-2"></span>
                 </div>
 
                 <div class="container-login100-form-btn">
                     <button class="login100-form-btn">
-                        Se connecter
+                        Recuperer mon mot de passe
                     </button>
                 </div>
 
                 <div class="text-center p-t-45 p-b-4">
-						<span class="txt1">
-							Vous avez oublié votre
-						</span>
-
-                    <a href="mot_de_passe_oubli.php" class="txt2 hov1">
-                        Mot de passe ?
+                    <a href="connexion.php" class="txt2 hov1">
+                        Se connecter
                     </a>
                 </div>
 
                 <div class="text-center">
 						<span class="txt1">
-							Creer un compte ?
+							Retourner à 
 						</span>
 
-                    <a href="inscription.php" class="txt2 hov1">
-                        Inscription
+                    <a href="index.php" class="txt2 hov1">
+                        l'accueil
                     </a>
                 </div>
             </form>
