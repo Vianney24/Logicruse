@@ -115,7 +115,7 @@
                         </a>
                     </li>
                 </ul>
-                <p class="copyright text-muted">Copyright &copy; Your Website 2017</p>
+                <p class="copyright text-muted">Copyright &copy; Logicruse 2018</p>
             </div>
         </div>
     </div>
