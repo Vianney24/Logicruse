@@ -40,5 +40,4 @@
         {
             mysqli_close($idConn);
         }
-
 ?>

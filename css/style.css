@@ -3,15 +3,19 @@
 .header-index {
     background-image: url('../img/accueil.jpg');
 }
+
 .header-activite {
     background-image: url('../img/informations.jpg');
 }
+
 .header-contact {
     background-image: url('../img/contact-bg.jpg');
 }
+
 .header-informations {
     background-image: url('../img/informations.jpg');
 }
+
 .header-inscription {
     background-image: url('../img/Inscription.jpg');
 }
