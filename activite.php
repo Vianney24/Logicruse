@@ -13,10 +13,10 @@
 <body>
 
 <!-- header -->
-<?php header(); ?>
+<?php entete(); ?>
 
 <!-- Page Header -->
-<header class="masthead" style="background-image: url('img/informations.jpg')">
+<header class="masthead header-activite">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">

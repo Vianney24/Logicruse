@@ -13,10 +13,10 @@
 <body>
 
 <!-- header -->
-<?php header(); ?>
+<?php entete(); ?>
 
 <!-- Page Header -->
-<header class="masthead" style="background-image: url('img/contact-bg.jpg')">
+<header class="masthead header-contact">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">

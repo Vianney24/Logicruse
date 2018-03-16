@@ -1,6 +1,6 @@
 <?php
     /* fonction pour inclure le header */
-    function header()
+    function entete()
     {
         include('header.php');
     }
