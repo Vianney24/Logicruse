@@ -36,11 +36,11 @@
         <div class="col-lg-8 col-md-10 mx-auto">
             <form action="traitement_inscription.php" method="post">
                 <div class="row">
-                    <p class="h3"> Informations : </p>
+                    <p class="h3"> Informations personnelles : </p>
 
                     <div class="col-lg-18 col-md-12 ">
                         <div class="margin-items-inscription">
-                        <input type="text" class="form-control" name="nomPers" placeholder="Nom *" required="true">
+                        <input type="text" class="form-control" name="nomPers" placeholder="Nom *" required>
                         </div>
 
                         <div class="margin-items-inscription">
@@ -49,7 +49,7 @@
 
                         <div class="margin-items-inscription">
                         <label><font size="3">Date de naissance (*) :</font></label>
-                        <input type="date" class="form-control" name="dateNaissPers" required="true">
+                        <input type="date" class="form-control" name="dateNaissPers" required>
                         </div>
 
                         <div class="margin-items-inscription">
@@ -58,11 +58,11 @@
                         </div>
 
                         <div class="margin-items-inscription">
-                        <input type="text" class="form-control" name="adresseL2Pers" placeholder="Adresse ligne 2">
+                        <input type="text" class="form-control" name="adresseL2Pers" placeholder="Complément d'adresse">
                         </div>
 
                         <div class="margin-items-inscription">
-                        <input type="text" class="form-control" name="mailResp" placeholder="Mail *" required="true">
+                        <input type="text" class="form-control" name="mailResp" placeholder="Mail *" required>
                         </div>
 
                         <div class="margin-items-inscription">
@@ -72,17 +72,35 @@
 
                         <div class="margin-items-inscription">
                         <input type="text" class="form-control" name="cpResp" placeholder="Code postal *"
-                               required="true">
+                               required>
                         </div>
 
                         <div class="margin-items-inscription">
-                        <input type="text" class="form-control" name="villeResp" placeholder="Ville *" required="true">
+                        <input type="text" class="form-control" name="villeResp" placeholder="Ville *" required>
                         </div>
                     </div>
                     <br>
+
+                    <p class="h3 margin-items-inscription-titre"> Informations de connexion: </p>
+
+                    <div class="col-lg-18 col-md-12 ">
+
+                        <div class="margin-items-inscription">
+                            <input type="text" class="form-control" name="identifiant" placeholder="Identifiant *" required>
+                        </div>
+
+                        <div class="margin-items-inscription">
+                            <input type="text" class="form-control" name="motDePasse" placeholder="Saisissez un mot de passe *" required>
+                        </div>
+
+                        <div class="margin-items-inscription">
+                            <input type="text" class="form-control" name="motDePasse2" placeholder="Confirmez votre mot de passe *" required>
+                        </div>
+
+                    </div>
                 </div>
                 <br>
-                <input type="submit" value="Valider" class="btn btn-primary validation"
+                <input type="submit" value="S'inscrire" class="btn btn-primary validation"
                        onmouseover="this.style.cursor='pointer'"/>
             </form>
         </div>
