@@ -62,7 +62,7 @@
                         </div>
 
                         <div class="margin-items-inscription">
-                        <input type="text" class="form-control" name="mailResp" placeholder="Mail *" required>
+                        <input type="text" class="form-control" name="mailPers" placeholder="Mail *" required>
                         </div>
 
                         <div class="margin-items-inscription">
@@ -71,12 +71,12 @@
                         </div>
 
                         <div class="margin-items-inscription">
-                        <input type="text" class="form-control" name="cpResp" placeholder="Code postal *"
+                        <input type="text" class="form-control" name="cpPers" placeholder="Code postal *"
                                required>
                         </div>
 
                         <div class="margin-items-inscription">
-                        <input type="text" class="form-control" name="villeResp" placeholder="Ville *" required>
+                        <input type="text" class="form-control" name="villePers" placeholder="Ville *" required>
                         </div>
                     </div>
                     <br>
@@ -90,11 +90,11 @@
                         </div>
 
                         <div class="margin-items-inscription">
-                            <input type="text" class="form-control" name="motDePasse" placeholder="Saisissez un mot de passe *" required>
+                            <input type="password" class="form-control" name="motDePasse" placeholder="Saisissez un mot de passe *" required>
                         </div>
 
                         <div class="margin-items-inscription">
-                            <input type="text" class="form-control" name="motDePasse2" placeholder="Confirmez votre mot de passe *" required>
+                            <input type="password" class="form-control" name="motDePasse2" placeholder="Confirmez votre mot de passe *" required>
                         </div>
 
                     </div>
