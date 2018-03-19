@@ -41,11 +41,8 @@
                     <h4><strong>À PROPOS DE LOGICRUSE</strong></h4>
                     <br>
                 </div>
-                <div class="col-sm-4">
-                    <img src="img/grande_croisiere.jpg" class="image_a_propos">
-                </div>
                 <div class="col-sm-8 texte">
-                    <h4>Un équipage français, une expertise et un service attentionné, une haute gastronomie:</h4>
+                    <h6>Un équipage français, une expertise et un service attentionné, une haute gastronomie:</h6>
                     <p>au cœur d’un environnement 5 étoiles, LOGICRUSE vous emmène à la découverte de destinations
                         d’exceptions et vous offre une expérience de voyage à la fois authentique et raffinée.</p>
                 </div>

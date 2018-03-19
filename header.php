@@ -11,9 +11,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.php">Accueil</a>
                 </li>
-                <?php if (isset($_SESSION['login']) && isset($_SESSION['pwd'])) { ?>
+                <?php
+                    session_start();
+                    if (isset($_SESSION['login']) && isset($_SESSION['pwd'])) {
+                ?>
                     <li class="nav-item">
                         <a class="nav-link" href="monCompte.php">Mon Compte</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logout.php">Déconnexion</a>
                     </li>
                     <?php
                 } else {
