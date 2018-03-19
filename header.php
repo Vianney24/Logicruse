@@ -13,25 +13,34 @@
                 </li>
                 <?php
                     session_start();
-                    if (isset($_SESSION['login']) && isset($_SESSION['pwd'])) {
-                ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="monCompte.php">Mon Compte</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="logout.php">Déconnexion</a>
-                    </li>
-                    <?php
-                } else {
-                    ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="inscription.php">Inscription</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="connexion.php">Connexion</a>
-                    </li>
-                    <?php
-                }
+                    if(isset($_SESSION['login']) && isset($_SESSION['pwd'])) {
+                        if($_SESSION['type'] == 'Administrateur') {
+                            ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="admin.php">Espace Administrateur</a>
+                            </li>
+                            <?php
+                        }
+                        ?>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="monCompte.php">Mon Compte</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="logout.php">Déconnexion</a>
+                        </li>
+
+                        <?php
+                    } else {
+                        ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="inscription.php">Inscription</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="connexion.php">Connexion</a>
+                        </li>
+                        <?php
+                    }
                 ?>
             </ul>
         </div>

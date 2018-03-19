@@ -92,12 +92,14 @@ TelephonePers, CpPers, VillePers, TypePers, IdentifiantPers, MotDePassePers) ';
         $SQLRow = mysqli_fetch_array($SQLResult);
         $login_valide = $SQLRow['IdentifiantPers'];
         $pwd_valide = $SQLRow['MotDePassePers'];
+        $type = $SQLRow['TypePers'];
 
         if(isset($login) && isset($pwd) && isset($login_valide)) {
             if($login_valide == $login && $pwd_valide == sha1($pwd)) {
                 session_start();
                 $_SESSION['login'] = $login_valide;
                 $_SESSION['pwd'] = $pwd_valide;
+                $_SESSION['type'] = $type;
                 print('<div class="alert alert-success message_connexion" role="alert">
         	 			<strong><span class="glyphicon glyphicon-ok"></span><br>Vous êtes maintenant connecté</strong>
         				</div>');
