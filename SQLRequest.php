@@ -116,4 +116,14 @@ TelephonePers, CpPers, VillePers, TypePers, IdentifiantPers, MotDePassePers) ';
     }
 
     #endregion
+
+    #region Fonction Déconnexion
+    Function deconnexion()
+    {
+        session_start ();
+        session_unset ();
+        session_destroy ();
+    }
+
+    #endregion
 ?>
