@@ -136,79 +136,20 @@ TelephonePers, CpPers, VillePers, TypePers, IdentifiantPers, MotDePassePers) ';
             $MailPers = $SQLRow['MailPers'];
             $TypePers = $SQLRow['TypePers'];
 
+
             if($_SESSION['login'] == $SQLRow['IdentifiantPers'] && $_SESSION['pwd'] == $SQLRow['MotDePassePers']) {
-                print('
-                    <tr class="alert-info">
-                        <td>' . $IdPers . '</td>
-                        <td>' . $NomPers . '</td>
-                        <td>' . $PrenomPers . '</td>
-                        <td>' . $DateNaissancePers . '</td>
-                        <td>' . $MailPers . '</td>                        
-                ');
-                if($TypePers == 'Administrateur') {
-                    print('<td>
-                            <form class="form-group col" action="admin.php?id=' . $IdPers . '" method="post">
-                                <select class="form-control col-md-5" name="TypePers">
-                                  <option value="Administrateur" selected>Administrateur</option>
-                                  <option value="Utilisateur">Utilisateur</option>
-                                  <option value="Restaurateur">Restaurateur</option>
-                                  <option value="Surveillant">Surveillant</option>
-                                </select>
-                                <input type="submit" href="#" class="btn btn-primary col-md-6">
-                            </form>
-                        </td>
-                    </tr>');
-                } elseif($TypePers == 'Utilisateur') {
-                    print('<td>
-                            <form class="form-group col" action="admin.php?id=' . $IdPers . '" method="post">
-                                <select class="form-control col-md-5" name="TypePers">
-                                  <option value="Administrateur">Administrateur</option>
-                                  <option value="Utilisateur" selected>Utilisateur</option>
-                                  <option value="Restaurateur">Restaurateur</option>
-                                  <option value="Surveillant">Surveillant</option>
-                                </select>
-                                <input type="submit" href="#" class="btn btn-primary col-md-6">
-                            </form>
-                        </td>
-                    </tr>');
-                } elseif($TypePers == 'Restaurateur') {
-                    print('<td>
-                            <form class="form-group col" action="admin.php?id=' . $IdPers . '" method="post">
-                                <select class="form-control col-md-5" name="TypePers">
-                                  <option value="Administrateur">Administrateur</option>
-                                  <option value="Utilisateur">Utilisateur</option>
-                                  <option value="Restaurateur" selected>Restaurateur</option>
-                                  <option value="Surveillant">Surveillant</option>
-                                </select>
-                                <input type="submit" href="#" class="btn btn-primary col-md-6">
-                            </form>
-                        </td>
-                    </tr>');
-                } elseif($TypePers == 'Surveillant') {
-                    print('<td>
-                            <form class="form-group col" action="admin.php?id=' . $IdPers . '" method="post">
-                                <select class="form-control col-md-5" name="TypePers">
-                                  <option value="Administrateur">Administrateur</option>
-                                  <option value="Utilisateur">Utilisateur</option>
-                                  <option value="Restaurateur">Restaurateur</option>
-                                  <option value="Surveillant" selected>Surveillant</option>
-                                </select>
-                                <input type="submit" href="#" class="btn btn-primary col-md-6">
-                            </form>
-                        </td>
-                    </tr>');
-                }
+                print('<tr class="alert-info">');
             } else {
-                print('
-                    <tr>
-                        <td>' . $IdPers . '</td>
+                print('<tr>');
+            }
+
+            print('<td>' . $IdPers . '</td>
                         <td>' . $NomPers . '</td>
                         <td>' . $PrenomPers . '</td>
                         <td>' . $DateNaissancePers . '</td>
-                        <td>' . $MailPers . '</td>
-                ');
-                if($TypePers == 'Administrateur') {
-                    print('<td>
+                        <td>' . $MailPers . '</td>');
+            if($TypePers == 'Administrateur') {
+                print('<td>
                             <form class="form-group col" action="admin.php?id=' . $IdPers . '" method="post">
                                 <select class="form-control col-md-5" name="TypePers">
                                   <option value="Administrateur" selected>Administrateur</option>
@@ -220,8 +161,8 @@ TelephonePers, CpPers, VillePers, TypePers, IdentifiantPers, MotDePassePers) ';
                             </form>
                         </td>
                     </tr>');
-                } elseif($TypePers == 'Utilisateur') {
-                    print('<td>
+            } elseif($TypePers == 'Utilisateur') {
+                print('<td>
                             <form class="form-group col" action="admin.php?id=' . $IdPers . '" method="post">
                                 <select class="form-control col-md-5" name="TypePers">
                                   <option value="Administrateur">Administrateur</option>
@@ -233,8 +174,8 @@ TelephonePers, CpPers, VillePers, TypePers, IdentifiantPers, MotDePassePers) ';
                             </form>
                         </td>
                     </tr>');
-                } elseif($TypePers == 'Restaurateur') {
-                    print('<td>
+            } elseif($TypePers == 'Restaurateur') {
+                print('<td>
                             <form class="form-group col" action="admin.php?id=' . $IdPers . '" method="post">
                                 <select class="form-control col-md-5" name="TypePers">
                                   <option value="Administrateur">Administrateur</option>
@@ -246,8 +187,8 @@ TelephonePers, CpPers, VillePers, TypePers, IdentifiantPers, MotDePassePers) ';
                             </form>
                         </td>
                     </tr>');
-                } elseif($TypePers == 'Surveillant') {
-                    print('<td>
+            } elseif($TypePers == 'Surveillant') {
+                print('<td>
                             <form class="form-group col" action="admin.php?id=' . $IdPers . '" method="post">
                                 <select class="form-control col-md-5" name="TypePers">
                                   <option value="Administrateur">Administrateur</option>
@@ -259,7 +200,6 @@ TelephonePers, CpPers, VillePers, TypePers, IdentifiantPers, MotDePassePers) ';
                             </form>
                         </td>
                     </tr>');
-                }
             }
         }
     }

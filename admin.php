@@ -12,7 +12,7 @@
 <body>
 
     <?php
-        if(isset($_GET['id'])) {
+        if(isset($_GET['id']) && isset($_POST['TypePers'])) {
             $TypePers = $_POST['TypePers'];
 
             $idConn = Open_DB();
