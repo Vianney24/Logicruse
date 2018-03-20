@@ -100,20 +100,12 @@ TelephonePers, CpPers, VillePers, TypePers, IdentifiantPers, MotDePassePers) ';
                 $_SESSION['login'] = $login_valide;
                 $_SESSION['pwd'] = $pwd_valide;
                 $_SESSION['type'] = $type;
-                print('<div class="alert alert-success message_connexion" role="alert">
-        	 			<strong><span class="glyphicon glyphicon-ok"></span><br>Vous êtes maintenant connecté</strong>
-        				</div>');
+                print('<div class="alert alert-success">Vous êtes maintenant connecté</div>');
             } else {
-                print('<div class="alert alert-danger message_connexion" role="alert">
-                    <strong><span class="glyphicon glyphicon-remove"></span><br>Echec de la connection !</strong><br>
-                    <a href="admin_connexion.php"> Retour </a> 
-                    </div>');
+                print('<div class="alert alert-danger">Echec de la connection !</div>');
             }
         } else {
-            print('<div class="alert alert-danger message_connexion" role="alert">
-                    <strong><span class="glyphicon glyphicon-remove"></span><br>Echec de la connection !</strong><br>
-                    <a href="admin_connexion.php"> Retour </a> 
-                    </div>');
+            print('<div class="alert alert-danger">Echec de la connection !</div>');
         }
     }
 
@@ -122,9 +114,154 @@ TelephonePers, CpPers, VillePers, TypePers, IdentifiantPers, MotDePassePers) ';
     #region Fonction Déconnexion
     Function deconnexion()
     {
-        session_start ();
-        session_unset ();
-        session_destroy ();
+        session_start();
+        session_unset();
+        session_destroy();
+    }
+
+    #endregion
+
+    #region Fonction GetCompte
+    function GetCompte()
+    {
+        $idConn = Open_DB();
+        $SQLQuery = "SELECT * FROM `personnel`";
+        $SQLResult = mysqli_query($idConn, $SQLQuery);
+
+        while($SQLRow = mysqli_fetch_array($SQLResult)) {
+            $IdPers = $SQLRow['IdPers'];
+            $NomPers = $SQLRow['NomPers'];
+            $PrenomPers = $SQLRow['PrenomPers'];
+            $DateNaissancePers = $SQLRow['DateNaissancePers'];
+            $MailPers = $SQLRow['MailPers'];
+            $TypePers = $SQLRow['TypePers'];
+
+            if($_SESSION['login'] == $SQLRow['IdentifiantPers'] && $_SESSION['pwd'] == $SQLRow['MotDePassePers']) {
+                print('
+                    <tr class="alert-info">
+                        <td>' . $IdPers . '</td>
+                        <td>' . $NomPers . '</td>
+                        <td>' . $PrenomPers . '</td>
+                        <td>' . $DateNaissancePers . '</td>
+                        <td>' . $MailPers . '</td>                        
+                ');
+                if($TypePers == 'Administrateur') {
+                    print('<td>
+                            <div class="form-group col">
+                                <select class="form-control col-md-5">
+                                  <option value="Administrateur" selected>Administrateur</option>
+                                  <option value="Utilisateur">Utilisateur</option>
+                                  <option value="Restaurateur">Restaurateur</option>
+                                  <option value="Surveillant">Surveillant</option>
+                                </select>
+                                <a href="#" class="btn btn-primary col-md-6">Enregistrer</a>
+                            </div>
+                        </td>
+                    </tr>');
+                } elseif($TypePers == 'Utilisateur') {
+                    print('<td>
+                            <div class="form-group col">
+                                <select class="form-control col-md-5">
+                                  <option value="Administrateur">Administrateur</option>
+                                  <option value="Utilisateur" selected>Utilisateur</option>
+                                  <option value="Restaurateur">Restaurateur</option>
+                                  <option value="Surveillant">Surveillant</option>
+                                </select>
+                                <a href="#" class="btn btn-primary col-md-6">Enregistrer</a>
+                            </div>
+                        </td>
+                    </tr>');
+                } elseif($TypePers == 'Restaurateur') {
+                    print('<td>
+                            <div class="form-group col">
+                                <select class="form-control col-md-5">
+                                  <option value="Administrateur">Administrateur</option>
+                                  <option value="Utilisateur">Utilisateur</option>
+                                  <option value="Restaurateur" selected>Restaurateur</option>
+                                  <option value="Surveillant">Surveillant</option>
+                                </select>
+                                <a href="#" class="btn btn-primary col-md-6">Enregistrer</a>
+                            </div>
+                        </td>
+                    </tr>');
+                } elseif($TypePers == 'Surveillant') {
+                    print('<td>
+                            <div class="form-group col">
+                                <select class="form-control col-md-5">
+                                  <option value="Administrateur">Administrateur</option>
+                                  <option value="Utilisateur">Utilisateur</option>
+                                  <option value="Restaurateur">Restaurateur</option>
+                                  <option value="Surveillant" selected>Surveillant</option>
+                                </select>
+                                <a href="#" class="btn btn-primary col-md-6">Enregistrer</a>
+                            </div>
+                        </td>
+                    </tr>');
+                }
+            } else {
+                print('
+                    <tr>
+                        <td>' . $IdPers . '</td>
+                        <td>' . $NomPers . '</td>
+                        <td>' . $PrenomPers . '</td>
+                        <td>' . $DateNaissancePers . '</td>
+                        <td>' . $MailPers . '</td>
+                ');
+                if($TypePers == 'Administrateur') {
+                    print('<td>
+                            <div class="form-group col">
+                                <select class="form-control col-md-5">
+                                  <option value="Administrateur" selected>Administrateur</option>
+                                  <option value="Utilisateur">Utilisateur</option>
+                                  <option value="Restaurateur">Restaurateur</option>
+                                  <option value="Surveillant">Surveillant</option>
+                                </select>
+                                <a href="#" class="btn btn-primary col-md-6">Enregistrer</a>
+                            </div>
+                        </td>
+                    </tr>');
+                } elseif($TypePers == 'Utilisateur') {
+                    print('<td>
+                            <div class="form-group col">
+                                <select class="form-control col-md-5">
+                                  <option value="Administrateur">Administrateur</option>
+                                  <option value="Utilisateur" selected>Utilisateur</option>
+                                  <option value="Restaurateur">Restaurateur</option>
+                                  <option value="Surveillant">Surveillant</option>
+                                </select>
+                                <a href="#" class="btn btn-primary col-md-6">Enregistrer</a>
+                            </div>
+                        </td>
+                    </tr>');
+                } elseif($TypePers == 'Restaurateur') {
+                    print('<td>
+                            <div class="form-group col">
+                                <select class="form-control col-md-5">
+                                  <option value="Administrateur">Administrateur</option>
+                                  <option value="Utilisateur">Utilisateur</option>
+                                  <option value="Restaurateur" selected>Restaurateur</option>
+                                  <option value="Surveillant">Surveillant</option>
+                                </select>
+                                <a href="#" class="btn btn-primary col-md-6">Enregistrer</a>
+                            </div>
+                        </td>
+                    </tr>');
+                } elseif($TypePers == 'Surveillant') {
+                    print('<td>
+                            <div class="form-group col">
+                                <select class="form-control col-md-5">
+                                  <option value="Administrateur">Administrateur</option>
+                                  <option value="Utilisateur">Utilisateur</option>
+                                  <option value="Restaurateur">Restaurateur</option>
+                                  <option value="Surveillant" selected>Surveillant</option>
+                                </select>
+                                <a href="#" class="btn btn-primary col-md-6">Enregistrer</a>
+                            </div>
+                        </td>
+                    </tr>');
+                }
+            }
+        }
     }
 
     #endregion
