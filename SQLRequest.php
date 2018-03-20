@@ -147,54 +147,54 @@ TelephonePers, CpPers, VillePers, TypePers, IdentifiantPers, MotDePassePers) ';
                 ');
                 if($TypePers == 'Administrateur') {
                     print('<td>
-                            <div class="form-group col">
-                                <select class="form-control col-md-5">
+                            <form class="form-group col" action="admin.php?id=' . $IdPers . '" method="post">
+                                <select class="form-control col-md-5" name="TypePers">
                                   <option value="Administrateur" selected>Administrateur</option>
                                   <option value="Utilisateur">Utilisateur</option>
                                   <option value="Restaurateur">Restaurateur</option>
                                   <option value="Surveillant">Surveillant</option>
                                 </select>
-                                <a href="#" class="btn btn-primary col-md-6">Enregistrer</a>
-                            </div>
+                                <input type="submit" href="#" class="btn btn-primary col-md-6">
+                            </form>
                         </td>
                     </tr>');
                 } elseif($TypePers == 'Utilisateur') {
                     print('<td>
-                            <div class="form-group col">
-                                <select class="form-control col-md-5">
+                            <form class="form-group col" action="admin.php?id=' . $IdPers . '" method="post">
+                                <select class="form-control col-md-5" name="TypePers">
                                   <option value="Administrateur">Administrateur</option>
                                   <option value="Utilisateur" selected>Utilisateur</option>
                                   <option value="Restaurateur">Restaurateur</option>
                                   <option value="Surveillant">Surveillant</option>
                                 </select>
-                                <a href="#" class="btn btn-primary col-md-6">Enregistrer</a>
-                            </div>
+                                <input type="submit" href="#" class="btn btn-primary col-md-6">
+                            </form>
                         </td>
                     </tr>');
                 } elseif($TypePers == 'Restaurateur') {
                     print('<td>
-                            <div class="form-group col">
-                                <select class="form-control col-md-5">
+                            <form class="form-group col" action="admin.php?id=' . $IdPers . '" method="post">
+                                <select class="form-control col-md-5" name="TypePers">
                                   <option value="Administrateur">Administrateur</option>
                                   <option value="Utilisateur">Utilisateur</option>
                                   <option value="Restaurateur" selected>Restaurateur</option>
                                   <option value="Surveillant">Surveillant</option>
                                 </select>
-                                <a href="#" class="btn btn-primary col-md-6">Enregistrer</a>
-                            </div>
+                                <input type="submit" href="#" class="btn btn-primary col-md-6">
+                            </form>
                         </td>
                     </tr>');
                 } elseif($TypePers == 'Surveillant') {
                     print('<td>
-                            <div class="form-group col">
-                                <select class="form-control col-md-5">
+                            <form class="form-group col" action="admin.php?id=' . $IdPers . '" method="post">
+                                <select class="form-control col-md-5" name="TypePers">
                                   <option value="Administrateur">Administrateur</option>
                                   <option value="Utilisateur">Utilisateur</option>
                                   <option value="Restaurateur">Restaurateur</option>
                                   <option value="Surveillant" selected>Surveillant</option>
                                 </select>
-                                <a href="#" class="btn btn-primary col-md-6">Enregistrer</a>
-                            </div>
+                                <input type="submit" href="#" class="btn btn-primary col-md-6">
+                            </form>
                         </td>
                     </tr>');
                 }
@@ -209,54 +209,54 @@ TelephonePers, CpPers, VillePers, TypePers, IdentifiantPers, MotDePassePers) ';
                 ');
                 if($TypePers == 'Administrateur') {
                     print('<td>
-                            <div class="form-group col">
-                                <select class="form-control col-md-5">
+                            <form class="form-group col" action="admin.php?id=' . $IdPers . '" method="post">
+                                <select class="form-control col-md-5" name="TypePers">
                                   <option value="Administrateur" selected>Administrateur</option>
                                   <option value="Utilisateur">Utilisateur</option>
                                   <option value="Restaurateur">Restaurateur</option>
                                   <option value="Surveillant">Surveillant</option>
                                 </select>
-                                <a href="#" class="btn btn-primary col-md-6">Enregistrer</a>
-                            </div>
+                                <input type="submit" href="#" class="btn btn-primary col-md-6">
+                            </form>
                         </td>
                     </tr>');
                 } elseif($TypePers == 'Utilisateur') {
                     print('<td>
-                            <div class="form-group col">
-                                <select class="form-control col-md-5">
+                            <form class="form-group col" action="admin.php?id=' . $IdPers . '" method="post">
+                                <select class="form-control col-md-5" name="TypePers">
                                   <option value="Administrateur">Administrateur</option>
                                   <option value="Utilisateur" selected>Utilisateur</option>
                                   <option value="Restaurateur">Restaurateur</option>
                                   <option value="Surveillant">Surveillant</option>
                                 </select>
-                                <a href="#" class="btn btn-primary col-md-6">Enregistrer</a>
-                            </div>
+                                <input type="submit" href="#" class="btn btn-primary col-md-6">
+                            </form>
                         </td>
                     </tr>');
                 } elseif($TypePers == 'Restaurateur') {
                     print('<td>
-                            <div class="form-group col">
-                                <select class="form-control col-md-5">
+                            <form class="form-group col" action="admin.php?id=' . $IdPers . '" method="post">
+                                <select class="form-control col-md-5" name="TypePers">
                                   <option value="Administrateur">Administrateur</option>
                                   <option value="Utilisateur">Utilisateur</option>
                                   <option value="Restaurateur" selected>Restaurateur</option>
                                   <option value="Surveillant">Surveillant</option>
                                 </select>
-                                <a href="#" class="btn btn-primary col-md-6">Enregistrer</a>
-                            </div>
+                                <input type="submit" href="#" class="btn btn-primary col-md-6">
+                            </form>
                         </td>
                     </tr>');
                 } elseif($TypePers == 'Surveillant') {
                     print('<td>
-                            <div class="form-group col">
-                                <select class="form-control col-md-5">
+                            <form class="form-group col" action="admin.php?id=' . $IdPers . '" method="post">
+                                <select class="form-control col-md-5" name="TypePers">
                                   <option value="Administrateur">Administrateur</option>
                                   <option value="Utilisateur">Utilisateur</option>
                                   <option value="Restaurateur">Restaurateur</option>
                                   <option value="Surveillant" selected>Surveillant</option>
                                 </select>
-                                <a href="#" class="btn btn-primary col-md-6">Enregistrer</a>
-                            </div>
+                                <input type="submit" href="#" class="btn btn-primary col-md-6">
+                            </form>
                         </td>
                     </tr>');
                 }

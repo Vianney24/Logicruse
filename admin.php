@@ -12,6 +12,14 @@
 <body>
 
     <?php
+        if(isset($_GET['id'])) {
+            $TypePers = $_POST['TypePers'];
+
+            $idConn = Open_DB();
+            $SQLQuery = "UPDATE `personnel` SET `TypePers`='" . $TypePers . "' WHERE personnel.IdPers='" . $_GET['id'] . "'";
+            $SQLResult = mysqli_query($idConn, $SQLQuery);
+        }
+
         entete();
     ?>
 
@@ -30,7 +38,7 @@
         </div>
     </header>
 
-    <div class="container">
+    <div class = "container">
         <table class = "table table-hover table-user">
             <thead>
             <tr>
