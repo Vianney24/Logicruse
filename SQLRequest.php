@@ -157,7 +157,7 @@ TelephonePers, CpPers, VillePers, TypePers, IdentifiantPers, MotDePassePers) ';
                                   <option value="Restaurateur">Restaurateur</option>
                                   <option value="Surveillant">Surveillant</option>
                                 </select>
-                                <input type="submit" href="#" class="btn btn-primary col-md-6">
+                                <input type="submit" class="btn btn-primary col-md-6" onclick="return(confirm(\'Confirmer la modification ?\'))">
                             </form>
                         </td>
                     </tr>');
@@ -170,7 +170,7 @@ TelephonePers, CpPers, VillePers, TypePers, IdentifiantPers, MotDePassePers) ';
                                   <option value="Restaurateur">Restaurateur</option>
                                   <option value="Surveillant">Surveillant</option>
                                 </select>
-                                <input type="submit" href="#" class="btn btn-primary col-md-6">
+                                <input type="submit" class="btn btn-primary col-md-6" onclick="return(confirm(\'Confirmer la modification ?\'))">
                             </form>
                         </td>
                     </tr>');
@@ -183,7 +183,7 @@ TelephonePers, CpPers, VillePers, TypePers, IdentifiantPers, MotDePassePers) ';
                                   <option value="Restaurateur" selected>Restaurateur</option>
                                   <option value="Surveillant">Surveillant</option>
                                 </select>
-                                <input type="submit" href="#" class="btn btn-primary col-md-6">
+                                <input type="submit" class="btn btn-primary col-md-6" onclick="return(confirm(\'Confirmer la modification ?\'))">
                             </form>
                         </td>
                     </tr>');
@@ -196,7 +196,7 @@ TelephonePers, CpPers, VillePers, TypePers, IdentifiantPers, MotDePassePers) ';
                                   <option value="Restaurateur">Restaurateur</option>
                                   <option value="Surveillant" selected>Surveillant</option>
                                 </select>
-                                <input type="submit" href="#" class="btn btn-primary col-md-6">
+                                <input type="submit" class="btn btn-primary col-md-6" onclick="return(confirm(\'Confirmer la modification ?\'))">
                             </form>
                         </td>
                     </tr>');
