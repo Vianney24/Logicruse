@@ -12,12 +12,18 @@
                     <a class="nav-link" href="index.php">Accueil</a>
                 </li>
                 <?php
-                    session_start();
                     if(isset($_SESSION['login']) && isset($_SESSION['pwd'])) {
                         if($_SESSION['type'] == 'Administrateur') {
                             ?>
                             <li class="nav-item">
                                 <a class="nav-link" href="admin.php">Espace Administrateur</a>
+                            </li>
+                            <?php
+                        }
+                        if($_SESSION['type'] == 'Restaurateur') {
+                            ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="restauration.php">Espace Restaurateur</a>
                             </li>
                             <?php
                         }

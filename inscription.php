@@ -1,6 +1,7 @@
 <?php
     include('fonction.php');
     $idConn = Open_DB();
+    session_start();
 ?>
 
 <!DOCTYPE html>

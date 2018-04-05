@@ -93,19 +93,22 @@ TelephonePers, CpPers, VillePers, TypePers, IdentifiantPers, MotDePassePers) ';
         $login_valide = $SQLRow['IdentifiantPers'];
         $pwd_valide = $SQLRow['MotDePassePers'];
         $type = $SQLRow['TypePers'];
+        $prenom = $SQLRow['PrenomPers'];
 
         if(isset($login) && isset($pwd) && isset($login_valide)) {
             if($login_valide == $login && $pwd_valide == sha1($pwd)) {
-                session_start();
                 $_SESSION['login'] = $login_valide;
                 $_SESSION['pwd'] = $pwd_valide;
                 $_SESSION['type'] = $type;
-                print('<div class="alert alert-success">Vous êtes maintenant connecté</div>');
+                print('<div class="alert alert-success message-login"><h3>Bonjour <b>' . $prenom . '</b>, vous êtes bien connecté</h3>Redirection dans quelques secondes</div>');
+                header('Refresh: 2; url=/index.php');
             } else {
-                print('<div class="alert alert-danger">Echec de la connection !</div>');
+                print('<div class="alert alert-danger message-login"><h3>Echec de la connection</h3> Identifiant ou Mot de passe incorrect<br>Redirection dans quelques secondes</div>');
+                header('Refresh: 2; url=/connexion.php');
             }
         } else {
-            print('<div class="alert alert-danger">Echec de la connection !</div>');
+            print('<div class="alert alert-danger message-login"><h3>Echec de la connection</h3> Identifiant ou Mot de passe incorrect<br>Redirection dans quelques secondes</div>');
+            header('Refresh: 2; url=/connexion.php');
         }
     }
 
@@ -114,9 +117,9 @@ TelephonePers, CpPers, VillePers, TypePers, IdentifiantPers, MotDePassePers) ';
     #region Fonction Déconnexion
     Function deconnexion()
     {
-        session_start();
         session_unset();
         session_destroy();
+        header('Refresh: 2; url=/index.php');
     }
 
     #endregion

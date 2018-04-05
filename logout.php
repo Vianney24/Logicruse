@@ -1,5 +1,6 @@
 <?php
     include("fonction.php");
+    session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,10 +11,9 @@
     <?php cssLink(); ?>
 </head>
 <body>
-<?php
-    deconnexion();
-?>
-<a href="index.php" class="btn btn-primary validation"
-   onmouseover="this.style.cursor='pointer'">Retour à l'acceuil</a>
+    <?php
+        deconnexion();
+    ?>
+    <div class="alert alert-danger message-login"><h3>Vous êtes déconnecté</h3>Redirection dans quelques secondes</div>
 </body>
 </html>
