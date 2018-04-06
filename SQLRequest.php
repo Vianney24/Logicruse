@@ -3,13 +3,16 @@
     /* fonction BDD */
 
     /* fonction ouverture base de données */
+
+    use PHPMailer\PHPMailer\PHPMailer;
+
     function Open_DB()
     {
         /*Connection base de données*/
         $server = 'localhost';
         $user = 'root';
         $pass = '';
-        $nom_data_base = 'bdd-ppe-lourd';
+        $nom_data_base = 'bdd-bts';
         //Overture de la connection
         $idConn = mysqli_connect($server, $user, $pass);
         //Selection de la base de donnée
@@ -64,8 +67,8 @@
                 $error = "Les mots de passes rentrés ne sont pas identiques !";
 
             if($error == "ok") {
-                $SQLQuery = 'INSERT INTO personnel(IdPers, NomPers, PrenomPers, DateNaissancePers, AdL1Pers, AdL2Pers, MailPers,
-TelephonePers, CpPers, VillePers, TypePers, IdentifiantPers, MotDePassePers) ';
+                $SQLQuery = "INSERT INTO personnel(IdPers, NomPers, PrenomPers, DateNaissancePers, AdL1Pers, AdL2Pers, MailPers,
+TelephonePers, CpPers, VillePers, TypePers, IdentifiantPers, MotDePassePers) ";
                 $SQLQuery .= "VALUES ($idPers, '$nom', '$prenom', '$date', '$adresse', '$adresse2', '$mail', '$telephone',
                  '$cp', '$ville', 'Utilisateur', '$identifiant', '$motDePasse')";
                 mysqli_query($idConn, $SQLQuery);
@@ -111,7 +114,6 @@ TelephonePers, CpPers, VillePers, TypePers, IdentifiantPers, MotDePassePers) ';
             header('Refresh: 2; url=/connexion.php');
         }
     }
-
     #endregion
 
     #region Fonction Déconnexion
@@ -207,5 +209,86 @@ TelephonePers, CpPers, VillePers, TypePers, IdentifiantPers, MotDePassePers) ';
         }
     }
 
+    #endregion
+
+    #region RecupérationDeMDP
+    function oubliMDP()
+    {
+        $newMDP = genererMDP(5);
+        $mailPers = $_POST["email"];
+
+        $idConn = Open_DB();
+        $SQLQuery = "SELECT * FROM `personnel` WHERE MailPers= '" . $mailPers . "'";
+        $SQLResult = mysqli_query($idConn, $SQLQuery);
+        $SQLRow = mysqli_fetch_array($SQLResult);
+        $SQLQuery = "UPDATE personnel
+                      SET MotDePassePers = '" . sha1($newMDP) . "'
+                      WHERE MailPers = '". $mailPers . "'";
+        $SQLResult = mysqli_query($idConn, $SQLQuery);
+
+
+
+        require 'src/Exception.php';
+        require 'src/PHPMailer.php';
+        require 'src/SMTP.php';
+        require 'src/OAuth.php';
+
+        $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+
+        if ($SQLRow != null)
+        {
+            $mail->SMTPOptions = array(
+                'ssl' => array(
+                    'verify_peer' => false,
+                    'verify_peer_name' => false,
+                    'allow_self_signed' => true
+                )
+            );
+            //Server settings
+            $mail->isSMTP();                                      // Set mailer to use SMTP
+            $mail->Host = ' smtp.gmail.com';                      // Specify main and backup SMTP servers
+            $mail->SMTPAuth = true;                               // Enable SMTP authentication
+            $mail->Username = 'smtp.remi.loubiou@gmail.com';      // SMTP username
+            $mail->Password = 'remiremi';                         // SMTP password
+            $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+            $mail->Port = '587';                                  // TCP port to connect to
+
+            //Recipients
+            $mail->setFrom('smtp.remi.loubiou@gmail.com');
+            $mail->addAddress($mailPers);     // Add a recipient
+            $mail->addReplyTo('remi.loubiou@gmail.com', 'Information');
+
+            //Content
+            $mail->isHTML(true);                                  // Set email format to HTML
+            $mail->Subject = 'Changement de mot de passe (Logicruse)';
+            $mail->Body = 'Votre mot de passe est : <b> ' . $newMDP . ' </b>';
+            $mail->AltBody = 'Votre mot de passe est : ' . $newMDP;
+
+            $mail->send();
+            print('<div class="alert alert-success message-login"><h3>Récupération réussie</h3>Votre mot de passe a bien été envoyé a cette adresse mail : ' . $mailPers . '<br>Redirection dans quelques secondes</div>');
+            header('Refresh: 2; url=/connexion.php');
+        }
+        else
+        {
+            print ('<div class="alert alert-danger message-login"><h3>Echec de la récupération</h3>l\'adresse mail : ' . $mailPers . ' n\'est pas reconnue<br>Redirection dans quelques secondes</div>');
+            header('Refresh: 2; url=/connexion.php');
+        }
+
+        Close_DB($idConn);
+    }
+
+    function genererMDP($size)
+    {
+        $password = 0;
+        // Initialisation des caractères utilisables
+        $characters = array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z");
+
+        for($i=0;$i<$size;$i++)
+        {
+            $password .= ($i%2) ? strtoupper($characters[array_rand($characters)]) : $characters[array_rand($characters)];
+        }
+
+        return $password;
+    }
     #endregion
 ?>

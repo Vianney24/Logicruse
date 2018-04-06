@@ -38,13 +38,13 @@
 <div class="limiter">
     <div class="container-login100">
         <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
-            <form class="login100-form validate-form">
+            <form class="login100-form" method="post" action="recuperation_mot_de_passe.php">
 					<span class="login100-form-title p-b-33">
 						Recuperer mon mot de passe
 					</span>
 
                 <div class="wrap-input100 validate-input m-t-20" data-validate = "Une addresse mail valide est requise, exemple: ex@abc.xyz">
-                    <input class="input100" type="text" name="email" placeholder="Courriel" required>
+                    <input class="input100" type="email" name="email" placeholder="Courriel" required>
                     <span class="focus-input100-1"></span>
                     <span class="focus-input100-2"></span>
                 </div>

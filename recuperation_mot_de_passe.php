@@ -1,7 +1,14 @@
 <?php
-    /**
-     * Created by PhpStorm.
-     * User: Remi
-     * Date: 05/04/2018
-     * Time: 19:13
-     */
+    include("fonction.php");
+    oubliMDP();
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Clean Blog - Start Bootstrap Theme</title>
+    <?php cssLink(); ?>
+</head>
+</html>
+
