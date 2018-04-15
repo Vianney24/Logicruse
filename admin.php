@@ -40,7 +40,7 @@
     </header>
 
     <div class = "container">
-        <table class = "table table-hover table-user">
+        <table class = "table table-hover">
             <thead>
             <tr>
                 <th>ID</th>
