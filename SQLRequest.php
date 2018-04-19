@@ -465,7 +465,7 @@ TelephonePers, CpPers, VillePers, TypePers, IdentifiantPers, MotDePassePers) ";
     function deleteUserAccount($idPers)
     {
         $idConn = Open_DB();
-        $SQLQuery = "DELETE FROM `personnel` WHERE IdPers=".$idPers;
+        $SQLQuery = "DELETE FROM `personnel` WHERE IdPers=" . $idPers;
         mysqli_query($idConn, $SQLQuery);
 
         print('<div class="alert alert-success message-login"><h4>Compte Supprimé</h4></div>');
@@ -510,6 +510,119 @@ TelephonePers, CpPers, VillePers, TypePers, IdentifiantPers, MotDePassePers) ";
         return $listeInfo;
     }
 
+
+    #endregion
+
+    #region Fonctions restauration
+    function GetAllCommandes()
+    {
+        $idConn = Open_DB();
+        $SQLQuery = "
+            SELECT bondecommande.IdBon, bondecommande.DateBon, fournisseur.NumSiretFour, fournisseur.NomFour FROM `lignereception` 
+            INNER JOIN bondecommande ON bondecommande.IdBon=lignereception.BonIdLig
+            INNER JOIN ingredient ON ingredient.IdIng=lignereception.IngIdLig
+            INNER JOIN fournisseur ON fournisseur.IdFour=ingredient.FournisseurId
+            GROUP BY bondecommande.IdBon
+            ORDER BY bondecommande.DateBon DESC
+        ";
+        $SQLResult = mysqli_query($idConn, $SQLQuery);
+
+        $listeCommande = [];
+        $Compteur = 1;
+
+        While($SQLRow = mysqli_fetch_array($SQLResult)) {
+            $IdBon = $SQLRow['IdBon'];
+            $DateBon = $SQLRow['DateBon'];
+            $NumSiretFour = $SQLRow['NumSiretFour'];
+            $NomFour = $SQLRow['NomFour'];
+
+            $listeInfoCommande = [
+                'IdBon'        => $IdBon,
+                'DateBon'      => $DateBon,
+                'NumSiretFour' => $NumSiretFour,
+                'NomFour'      => $NomFour,
+            ];
+
+            $listeCommande['Commande' . $Compteur] = $listeInfoCommande;
+            $Compteur++;
+        }
+
+        return $listeCommande;
+    }
+
+    function GetPastCommandes()
+    {
+        $idConn = Open_DB();
+        $SQLQuery = "
+            SELECT bondecommande.IdBon, bondecommande.DateBon, fournisseur.NumSiretFour, fournisseur.NomFour FROM `lignereception` 
+            INNER JOIN bondecommande ON bondecommande.IdBon=lignereception.BonIdLig
+            INNER JOIN ingredient ON ingredient.IdIng=lignereception.IngIdLig
+            INNER JOIN fournisseur ON fournisseur.IdFour=ingredient.FournisseurId
+            WHERE lignereception.EtatIdLig=1
+            GROUP BY bondecommande.IdBon
+            ORDER BY bondecommande.DateBon DESC
+        ";
+        $SQLResult = mysqli_query($idConn, $SQLQuery);
+
+        $listeCommande = [];
+        $Compteur = 1;
+
+        While($SQLRow = mysqli_fetch_array($SQLResult)) {
+            $IdBon = $SQLRow['IdBon'];
+            $DateBon = $SQLRow['DateBon'];
+            $NumSiretFour = $SQLRow['NumSiretFour'];
+            $NomFour = $SQLRow['NomFour'];
+
+            $listeInfoCommande = [
+                'IdBon'        => $IdBon,
+                'DateBon'      => $DateBon,
+                'NumSiretFour' => $NumSiretFour,
+                'NomFour'      => $NomFour,
+            ];
+
+            $listeCommande['Commande' . $Compteur] = $listeInfoCommande;
+            $Compteur++;
+        }
+
+        return $listeCommande;
+    }
+
+    function GetPrevCommandes()
+    {
+        $idConn = Open_DB();
+        $SQLQuery = "
+            SELECT bondecommande.IdBon, bondecommande.DateBon, fournisseur.NumSiretFour, fournisseur.NomFour FROM quantitecommandee 
+            INNER JOIN bondecommande ON bondecommande.IdBon=quantitecommandee.BondecommandeIdQte
+            INNER JOIN ingredient ON ingredient.IdIng=quantitecommandee.IngredientIdQte
+            INNER JOIN fournisseur ON fournisseur.IdFour=ingredient.FournisseurId
+            WHERE bondecommande.IdBon NOT IN(SELECT lignereception.BonIdLig FROM lignereception)
+            GROUP BY bondecommande.IdBon
+            ORDER BY bondecommande.DateBon DESC
+        ";
+        $SQLResult = mysqli_query($idConn, $SQLQuery);
+
+        $listeCommande = [];
+        $Compteur = 1;
+
+        While($SQLRow = mysqli_fetch_array($SQLResult)) {
+            $IdBon = $SQLRow['IdBon'];
+            $DateBon = $SQLRow['DateBon'];
+            $NumSiretFour = $SQLRow['NumSiretFour'];
+            $NomFour = $SQLRow['NomFour'];
+
+            $listeInfoCommande = [
+                'IdBon'        => $IdBon,
+                'DateBon'      => $DateBon,
+                'NumSiretFour' => $NumSiretFour,
+                'NomFour'      => $NomFour,
+            ];
+
+            $listeCommande['Commande' . $Compteur] = $listeInfoCommande;
+            $Compteur++;
+        }
+
+        return $listeCommande;
+    }
 
     #endregion
 

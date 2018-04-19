@@ -50,3 +50,37 @@
 .btn-compte {
     text-align: center;
 }
+
+.titre-commande {
+    text-align: center;
+}
+
+.table-container {
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+}
+
+.maTable {
+    width: 95%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.btn-tri {
+    width: 100%;
+    margin: auto;
+    padding: 10px;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.mesBtn {
+    text-transform: none;
+}
+
+.btn-outline-primary {
+    background-color: white;
+}
